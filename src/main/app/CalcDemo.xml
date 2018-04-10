@@ -26,6 +26,9 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
             <when expression="#[flowVars.operation=='Multiplication']">
                 <set-payload value="#[Float.parseFloat(flowVars.input1) * Float.parseFloat(flowVars.input2)]" doc:name="Multiplication"/>
             </when>
+            <when expression="">
+                <set-payload value="#[Float.parseFloat(flowVars.input1) % Float.parseFloat(flowVars.input2)]" doc:name="Set Payload"/>
+            </when>
             <otherwise>
                 <set-payload value="#[Float.parseFloat(flowVars.input1) / Float.parseFloat(flowVars.input2)]" doc:name="Division"/>
             </otherwise>
