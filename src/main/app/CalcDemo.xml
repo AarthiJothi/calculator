@@ -23,7 +23,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
             <when expression="#[flowVars.operation=='Subtraction']">
                 <set-payload value="#[Float.parseFloat(flowVars.input1) - Float.parseFloat(flowVars.input2)]" doc:name="Subtraction"/>
             </when>
-		 <when expression="#[flowVars.operation=='Multiplication']">
+	    <when expression="#[flowVars.operation=='Multiplication']">
                 <set-payload value="#[Float.parseFloat(flowVars.input1) * Float.parseFloat(flowVars.input2)]" doc:name="Multiplication"/>
             </when>
             <when expression="">
