@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany</groupId>
 	<artifactId>calcdemo</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>mule</packaging>
+    	<version>1.0.0-SNAPSHOT</version>
+    	<packaging>mule</packaging>
 	<name>Mule calcdemo Application</name>
 
     <properties>
@@ -13,8 +13,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<mule.version>3.8.5</mule.version>
-    	<mule.tools.version>1.2</mule.tools.version>
-	</properties>
+    		<mule.tools.version>1.2</mule.tools.version>
+    </properties>
 
 	<build>
 		<plugins>
