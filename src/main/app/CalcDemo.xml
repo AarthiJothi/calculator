@@ -15,6 +15,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
             <add-message-property key="input2" value="#[xpath3('Calc/input2')]"/>
             <add-message-property key="operation" value="#[xpath3('Calc/Operation')]"/>
         </message-properties-transformer>
+        <set-payload value="#[flowVars.input1] #[flowVars.input2]" doc:name="TwoNumbers"/>
         <logger message="#[flowVars.input1]" level="INFO" doc:name="Logger"/>
         <choice doc:name="Choice">
             <when expression="#[flowVars.operation=='Addition']">
@@ -27,7 +28,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
                 <set-payload value="#[Float.parseFloat(flowVars.input1) * Float.parseFloat(flowVars.input2)]" doc:name="Multiplication"/>
             </when>
             <when expression="">
-                <set-payload value="#[Float.parseFloat(flowVars.input1) % Float.parseFloat(flowVars.input2)]" doc:name="Set Payload"/>
+                <set-payload value="#[Float.parseFloat(flowVars.input1) % Float.parseFloat(flowVars.input2)]" doc:name="percentage"/>
             </when>
             <otherwise>
                 <set-payload value="#[Float.parseFloat(flowVars.input1) / Float.parseFloat(flowVars.input2)]" doc:name="Division"/>
