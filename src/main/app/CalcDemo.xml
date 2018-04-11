@@ -20,6 +20,8 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
         <choice doc:name="Choice">
             <when expression="#[flowVars.operation=='Addition']">
                 <set-payload value="#[Float.parseFloat(flowVars.input1) +Float.parseFloat(flowVars.input2)]" doc:name="Addition"/>
+                <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+                <set-payload value="#[payload]" doc:name="Set Payload"/>
             </when>
             <when expression="#[flowVars.operation=='Subtraction']">
                 <set-payload value="#[Float.parseFloat(flowVars.input1) - Float.parseFloat(flowVars.input2)]" doc:name="Subtraction"/>
@@ -32,6 +34,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
             </when>
             <otherwise>
                 <set-payload value="#[Float.parseFloat(flowVars.input1) / Float.parseFloat(flowVars.input2)]" doc:name="Division"/>
+                <logger message="#[payload]" level="INFO" doc:name="Logger"/>
             </otherwise>
         </choice>
         <set-payload value="Status : #[payload]" doc:name="Set Payload"/>
