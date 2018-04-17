@@ -21,16 +21,18 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
             <when expression="#[flowVars.operation=='Addition']">
                 <set-payload value="#[Float.parseFloat(flowVars.input1) +Float.parseFloat(flowVars.input2)]" doc:name="Addition"/>
                 <logger message="#[payload]" level="INFO" doc:name="Logger"/>
-                <set-payload value="#[payload]" doc:name="Set Payload"/>
             </when>
             <when expression="#[flowVars.operation=='Subtraction']">
                 <set-payload value="#[Float.parseFloat(flowVars.input1) - Float.parseFloat(flowVars.input2)]" doc:name="Subtraction"/>
+                <logger message="#[payload]" level="INFO" doc:name="Logger"/>
             </when>
             <when expression="#[flowVars.operation=='Multiplication']">
                 <set-payload value="#[Float.parseFloat(flowVars.input1) * Float.parseFloat(flowVars.input2)]" doc:name="Multiplication"/>
+                <logger message="#[payload]" level="INFO" doc:name="Logger"/>
             </when>
-            <when expression="">
+            <when expression="#[flowVars.operation=='Multiplication']">
                 <set-payload value="#[Float.parseFloat(flowVars.input1) % Float.parseFloat(flowVars.input2)]" doc:name="percentage"/>
+                <logger message="#[payload]" level="INFO" doc:name="Logger"/>
             </when>
             <otherwise>
                 <set-payload value="#[Float.parseFloat(flowVars.input1) / Float.parseFloat(flowVars.input2)]" doc:name="Division"/>
